@@ -15,15 +15,11 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #ff416c, #ff4b2b);
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding: 20px;
+      padding: 40px 20px;
     }
     .container {
-      max-width: 600px;
+      max-width: 800px;
+      margin: 0 auto;
       background: rgba(0, 0, 0, 0.2);
       padding: 40px;
       border-radius: 12px;
@@ -36,7 +32,7 @@
     }
     p {
       font-size: 1.1rem;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     input[type="email"] {
       width: 80%;
@@ -65,6 +61,28 @@
       font-size: 1.2rem;
       color: #d4ff00;
     }
+    .section {
+      margin: 60px 0;
+    }
+    .book-images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .book-images img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .buy-button {
+      display: block;
+      margin: 40px auto 0;
+      font-size: 1.2rem;
+      background-color: #d4ff00;
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -74,6 +92,28 @@
     <input type="email" id="email" placeholder="Enter your email" />
     <button onclick="subscribe()">Subscribe Now</button>
     <div id="message" class="success"></div>
+
+    <div class="section">
+      <h1>Discover the Book Everyone is Talking About</h1>
+      <p><strong>"The Mind Unlocked"</strong> is not just a book – it's your gateway to a transformed life. Dive into powerful insights, practical tools, and a journey of self-mastery that will help you unleash your full potential.</p>
+      <p>Written by renowned thought leaders, this book blends science and real-world applications to help you think clearer, act with confidence, and create the future you envision.</p>
+    </div>
+
+    <div class="section">
+      <h1>Why You Should Get It</h1>
+      <p>✔️ Break through mental blocks and achieve your goals faster.</p>
+      <p>✔️ Learn proven strategies to master focus, discipline, and resilience.</p>
+      <p>✔️ Elevate your mindset and upgrade your decision-making power.</p>
+      <p>✔️ A must-have for entrepreneurs, students, and anyone ready for change.</p>
+    </div>
+
+    <div class="book-images">
+      <img src="https://via.placeholder.com/200x300?text=Front+Cover" alt="Front Cover">
+      <img src="https://via.placeholder.com/200x300?text=Back+Cover" alt="Back Cover">
+      <img src="https://via.placeholder.com/200x300?text=Side+View" alt="Side View">
+    </div>
+
+    <button class="buy-button" onclick="buyBook()">Buy the Book Now</button>
   </div>
 
   <script>
@@ -83,10 +123,15 @@
       if (email && email.includes('@')) {
         messageDiv.textContent = "Thanks for subscribing! Check your inbox.";
         document.getElementById('email').value = '';
+        messageDiv.style.color = '#d4ff00';
       } else {
         messageDiv.textContent = "Please enter a valid email address.";
         messageDiv.style.color = '#fff';
       }
+    }
+
+    function buyBook() {
+      alert("Redirecting to purchase page...");
     }
   </script>
 </body>
