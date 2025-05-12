@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Our Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    input[type="email"] {
+      width: 80%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px 25px;
+      background-color: #fff;
+      color: #ff416c;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #f1f1f1;
+    }
+    .success {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #d4ff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unlock Premium Features</h1>
+    <p>Join thousands of users getting smarter, faster. Subscribe and take the leap today!</p>
+    <input type="email" id="email" placeholder="Enter your email" />
+    <button onclick="subscribe()">Subscribe Now</button>
+    <div id="message" class="success"></div>
+  </div>
+
+  <script>
+    function subscribe() {
+      const email = document.getElementById('email').value;
+      const messageDiv = document.getElementById('message');
+      if (email && email.includes('@')) {
+        messageDiv.textContent = "Thanks for subscribing! Check your inbox.";
+        document.getElementById('email').value = '';
+      } else {
+        messageDiv.textContent = "Please enter a valid email address.";
+        messageDiv.style.color = '#fff';
+      }
+    }
+  </script>
+</body>
+</html>
