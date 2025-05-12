@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join Our Platform</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,22 +13,24 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      background: linear-gradient(135deg, #f67280, #355c7d);
       color: #fff;
       padding: 40px 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.05);
       padding: 40px;
-      border-radius: 12px;
+      border-radius: 16px;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     }
     h1 {
-      font-size: 2.5rem;
+      font-family: 'Merriweather', serif;
+      font-size: 2.8rem;
       margin-bottom: 20px;
+      color: #ffe082;
     }
     p {
       font-size: 1.1rem;
@@ -44,8 +46,8 @@
     }
     button {
       padding: 12px 25px;
-      background-color: #fff;
-      color: #ff416c;
+      background-color: #ffe082;
+      color: #222;
       font-weight: 600;
       font-size: 1rem;
       border: none;
@@ -54,12 +56,12 @@
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #f1f1f1;
+      background-color: #ffca28;
     }
     .success {
       margin-top: 20px;
       font-size: 1.2rem;
-      color: #d4ff00;
+      color: #81c784;
     }
     .section {
       margin: 60px 0;
@@ -80,13 +82,31 @@
       display: block;
       margin: 40px auto 0;
       font-size: 1.2rem;
-      background-color: #d4ff00;
-      color: #000;
+      background-color: #4db6ac;
+      color: #fff;
+    }
+    .testimonial {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid #ffe082;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+      font-style: italic;
+    }
+    .offer-banner {
+      background-color: #ff7043;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 20px 0;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="offer-banner">🔥 Limited Time Offer: Get 20% Off When You Order Today! 🔥</div>
+
     <h1>Unlock Premium Features</h1>
     <p>Join thousands of users getting smarter, faster. Subscribe and take the leap today!</p>
     <input type="email" id="email" placeholder="Enter your email" />
@@ -113,6 +133,13 @@
       <img src="https://via.placeholder.com/200x300?text=Side+View" alt="Side View">
     </div>
 
+    <div class="section">
+      <h1>What Readers Are Saying</h1>
+      <div class="testimonial">"I read it in one sitting. It completely shifted how I approach my goals!" – Alex M.</div>
+      <div class="testimonial">"The most powerful book I’ve read this year. It's both practical and inspiring." – Jamie L.</div>
+      <div class="testimonial">"Every chapter is gold. I’ve gifted it to all my friends." – Morgan K.</div>
+    </div>
+
     <button class="buy-button" onclick="buyBook()">Buy the Book Now</button>
   </div>
 
@@ -123,7 +150,7 @@
       if (email && email.includes('@')) {
         messageDiv.textContent = "Thanks for subscribing! Check your inbox.";
         document.getElementById('email').value = '';
-        messageDiv.style.color = '#d4ff00';
+        messageDiv.style.color = '#81c784';
       } else {
         messageDiv.textContent = "Please enter a valid email address.";
         messageDiv.style.color = '#fff';
